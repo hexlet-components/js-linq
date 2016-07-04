@@ -3,7 +3,7 @@
 class Enumerable {
   collection: [any];
   operations: [any];
-  cache: ?[any];
+  memo: ?[any];
 
   constructor(collection: [any], operations: ?[any]) {
     this.collection = collection;
@@ -37,7 +37,7 @@ class Enumerable {
   }
 
   get length(): number {
-    return this.perform().length;
+    return this.toArray().length;
   }
 
   build(name: string, ...args: any) {
@@ -48,15 +48,14 @@ class Enumerable {
   }
 
   perform() {
-    if (this.cache) {
-      return this.cache;
-    }
-    return this.operations.reduce((acc, { name, args }) =>
-      acc[name](...args), this.collection);
   }
 
   toArray() {
-    return this.perform();
+    if (this.memo) {
+      return this.memo;
+    }
+    return this.operations.reduce((acc, { name, args }) =>
+      acc[name](...args), this.collection);
   }
 }
 
