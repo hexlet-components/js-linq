@@ -25,7 +25,9 @@ describe('HexletLinq', () => {
       .where(car => car.brand === 'kia')
       .where(car => car.year > 2011);
 
-    const result2 = coll.where(car => car.model === 'sorento');
+    const result2 = coll
+      .orderBy(car => car.year, 'desc')
+      .where(car => car.model === 'sorento');
     assert.equal(result2.length, 1);
     assert.equal(result2.length, 1);
 

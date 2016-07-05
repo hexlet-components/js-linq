@@ -44,7 +44,7 @@ class Enumerable {
     const clonedOperations = this.operations.slice();
     clonedOperations.push({ name, args });
 
-    return new Enumerable(this.collection, clonedOperations);
+    return new Enumerable(this.collection.slice(), clonedOperations);
   }
 
   perform() {
