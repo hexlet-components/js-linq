@@ -11,11 +11,11 @@ class Enumerable {
   }
 
   where(fn: (value: any, index: number) => boolean) {
-    return this.build('filter', fn);
+    return this.build(coll => coll.filter(fn));
   }
 
-  select(fn: (value: any) => any) {
-    return this.build('map', fn);
+  select(fn: (value: any, index: number) => any) {
+    return this.build(coll => coll.map(fn));
   }
 
   orderBy(fn: (value: any) => any, direction: 'asc' | 'desc' = 'asc') {
@@ -33,29 +33,25 @@ class Enumerable {
 
       return 0;
     };
-    return this.build('sort', comparator);
+    return this.build(coll => coll.sort(comparator));
   }
 
   get length(): number {
     return this.toArray().length;
   }
 
-  build(name: string, ...args: any) {
-    const clonedOperations = this.operations.slice();
-    clonedOperations.push({ name, args });
-
-    return new Enumerable(this.collection.slice(), clonedOperations);
-  }
-
-  perform() {
+  build(fn: (coll: [any]) => any) {
+    const newOperations = this.operations.slice();
+    newOperations.push(fn);
+    return new Enumerable(this.collection.slice(), newOperations);
   }
 
   toArray() {
-    if (this.memo) {
-      return this.memo;
+    if (!this.memo) {
+      this.memo = this.operations.reduce((acc, func) => func(acc), this.collection);
     }
-    return this.operations.reduce((acc, { name, args }) =>
-      acc[name](...args), this.collection);
+
+    return this.memo;
   }
 }
 

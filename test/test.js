@@ -21,12 +21,20 @@ describe('HexletLinq', () => {
   });
 
   it('should be immutable', () => {
+    coll.orderBy(car => car.year, 'asc').toArray();
+    const result = coll.where(car => car.brand === 'kia')
+      .where(car => car.year > 2011);
+
+    assert.deepEqual(result.toArray(), [cars[2], cars[4]]);
+  });
+
+  it('should be immutable 2', () => {
     const result = coll
       .where(car => car.brand === 'kia')
       .where(car => car.year > 2011);
 
     const result2 = coll
-      .orderBy(car => car.year, 'desc')
+      .orderBy(car => car.year, 'asc')
       .where(car => car.model === 'sorento');
     assert.equal(result2.length, 1);
     assert.equal(result2.length, 1);
