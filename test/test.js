@@ -3,7 +3,7 @@
 import { beforeEach, describe, it } from 'mocha';
 import assert from 'assert';
 
-import HexletLinq from '../index';
+import HexletLinq from '../src/index';
 
 describe('HexletLinq', () => {
   let coll;
