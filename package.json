@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "eslint": "eslint",
-    "build": "NODE_ENV=production babel src/index.js --out-dir dist --source-maps inline",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build"
   },
   "repository": {
