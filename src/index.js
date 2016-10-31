@@ -2,6 +2,9 @@
 
 import Enumerable from './Enumerable';
 
-export default {
-  from: (collection: [any]) => new Enumerable(collection),
-};
+/**
+ * Convert array to enumerable collection
+ */
+const from = (collection: [any]) => new Enumerable(collection);
+
+export default { from };
