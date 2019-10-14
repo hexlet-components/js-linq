@@ -1,5 +1,5 @@
 install:
-	yarn
+	npm i
 
 docs:
 	mkdir -p docs
@@ -13,9 +13,9 @@ test:
 	npm run test
 
 lint:
-	npm run eslint -- src test
+	npx eslint .
 
 publish:
-	npm publish
+	npm publish --access public
 
 .PHONY: test docs

@@ -5,7 +5,9 @@
  */
 class Enumerable {
   collection: [any];
+
   operations: [any];
+
   memo: ?[any];
 
   /**
@@ -20,14 +22,14 @@ class Enumerable {
    * Where
    */
   where(fn: (value: any, index: number) => boolean) {
-    return this.build(coll => coll.filter(fn));
+    return this.build((coll) => coll.filter(fn));
   }
 
   /**
    * Select
    */
   select(fn: (value: any, index: number) => any) {
-    return this.build(coll => coll.map(fn));
+    return this.build((coll) => coll.map(fn));
   }
 
   /**
@@ -42,13 +44,14 @@ class Enumerable {
 
       if (a1 > b1) {
         return compareResult;
-      } else if (a1 < b1) {
+      }
+      if (a1 < b1) {
         return -compareResult;
       }
 
       return 0;
     };
-    return this.build(coll => coll.sort(comparator));
+    return this.build((coll) => coll.sort(comparator));
   }
 
   /**
