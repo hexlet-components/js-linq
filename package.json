@@ -7,7 +7,7 @@
     "documentation": "documentation",
     "test": "jest --color",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
