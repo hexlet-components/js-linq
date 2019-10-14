@@ -1,12 +1,11 @@
 {
-  "name": "hexlet-linq",
-  "version": "0.0.3",
+  "name": "@hexlet/linq",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "documentation": "documentation",
-    "test": "mocha --compilers js:babel-core/register",
-    "eslint": "eslint",
+    "test": "jest --color",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build"
   },
@@ -21,20 +20,18 @@
   },
   "homepage": "https://github.com/hexlet-components/js-linq#readme",
   "devDependencies": {
-    "documentation": "v4.0.0-beta11",
-    "babel-plugin-syntax-flow": "*",
-    "babel-plugin-transform-flow-strip-types": "*",
-    "babel-plugin-typecheck": "*",
-    "babel-eslint": "*",
-    "babel-cli": "*",
-    "babel-core": "*",
-    "babel-preset-es2015": "*",
-    "babel-preset-es2016": "*",
-    "babel-preset-es2017": "*",
-    "babel-preset-stage-0": "*",
-    "eslint": "*",
-    "eslint-config-airbnb": "*",
-    "eslint-plugin-import": "^1.8.0",
-    "mocha": "*"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "documentation": "^9.1.1",
+    "eslint": "^5.14.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0"
   }
 }
