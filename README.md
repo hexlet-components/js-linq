@@ -1,5 +1,6 @@
 ### js-linq
 
+[![github action status](https://github.com/hexlet-components/js-linq/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-components/js-linq/actions)
 [![Code Climate](https://codeclimate.com/github/hexlet-components/js-linq/badges/gpa.svg)](https://codeclimate.com/github/hexlet-components/js-linq)
 
 ```javascript
