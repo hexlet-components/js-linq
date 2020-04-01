@@ -1,8 +1,6 @@
 ### js-linq
 
 [![Code Climate](https://codeclimate.com/github/hexlet-components/js-linq/badges/gpa.svg)](https://codeclimate.com/github/hexlet-components/js-linq)
-[![Build Status](https://travis-ci.org/hexlet-components/js-linq.svg?branch=master)](https://travis-ci.org/hexlet-components/js-linq)
-
 
 ```javascript
 cars = [

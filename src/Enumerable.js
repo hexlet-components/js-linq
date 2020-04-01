@@ -1,19 +1,13 @@
-// @flow
+// @ts-check
 
 /**
  * Enumerable
  */
 class Enumerable {
-  collection: [any];
-
-  operations: [any];
-
-  memo: ?[any];
-
   /**
    * Constructor
    */
-  constructor(collection: [any], operations: ?[any]) {
+  constructor(collection, operations) {
     this.collection = collection;
     this.operations = operations || [];
   }
@@ -21,21 +15,21 @@ class Enumerable {
   /**
    * Where
    */
-  where(fn: (value: any, index: number) => boolean) {
+  where(fn) {
     return this.build((coll) => coll.filter(fn));
   }
 
   /**
    * Select
    */
-  select(fn: (value: any, index: number) => any) {
+  select(fn) {
     return this.build((coll) => coll.map(fn));
   }
 
   /**
    * OrderBy
    */
-  orderBy(fn: (value: any) => any, direction: 'asc' | 'desc' = 'asc') {
+  orderBy(fn, direction = 'asc') {
     const comparator = (a, b) => {
       const a1 = fn(a);
       const b1 = fn(b);
@@ -57,14 +51,14 @@ class Enumerable {
   /**
    * Length
    */
-  get length(): number {
+  get length() {
     return this.toArray().length;
   }
 
   /**
    * Build
    */
-  build(fn: (coll: [any]) => any) {
+  build(fn) {
     const newOperations = this.operations.slice();
     newOperations.push(fn);
     return new Enumerable(this.collection.slice(), newOperations);
