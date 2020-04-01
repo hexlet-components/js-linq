@@ -1,5 +1,5 @@
 install:
-	npm i
+	npm install
 
 docs:
 	mkdir -p docs
