@@ -13,7 +13,7 @@ test:
 	npm run test
 
 lint:
-	npx eslint .
+	npx biome check .
 
 publish:
 	npm publish --access public
