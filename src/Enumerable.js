@@ -120,7 +120,10 @@ class Enumerable {
    */
   toArray() {
     if (!this.memo) {
-      this.memo = this.operations.reduce((acc, func) => func(acc), this.collection);
+      this.memo = this.operations.reduce(
+        (acc, func) => func(acc),
+        this.collection,
+      );
     }
 
     return this.memo;

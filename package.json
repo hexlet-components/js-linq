@@ -3,9 +3,13 @@
   "version": "0.1.2",
   "description": "",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=26.0"
+  },
   "scripts": {
     "documentation": "documentation",
-    "test": "jest --color",
+    "test": "vitest run",
+    "lint": "biome check .",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
@@ -25,15 +29,9 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.7",
-    "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-env": "^7.20.2",
-    "babel-jest": "^30.3.0",
+    "@biomejs/biome": "^2.2.4",
     "documentation": "^14.0.1",
-    "eslint": "^10.2.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^29.15.1",
-    "jest": "^30.3.0",
-    "jest-cli": "^30.3.0"
+    "vitest": "^4.0.15"
   }
 }

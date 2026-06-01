@@ -19,7 +19,8 @@ describe('HexletLinq', () => {
 
   it('should be immutable', () => {
     coll.orderBy((car) => car.year, 'asc').toArray();
-    const result = coll.where((car) => car.brand === 'kia')
+    const result = coll
+      .where((car) => car.brand === 'kia')
       .where((car) => car.year > 2011);
 
     expect(result.toArray()).toEqual([cars[2], cars[4]]);
@@ -51,21 +52,25 @@ describe('HexletLinq', () => {
   });
 
   it('#select', () => {
-    const result = coll.where((car) => car.brand === 'bmw').select((car) => car.model);
+    const result = coll
+      .where((car) => car.brand === 'bmw')
+      .select((car) => car.model);
 
     expect(result.length).toBe(2);
     expect(result.toArray()).toEqual(['m5', 'm4']);
   });
 
   it('#orderBy', () => {
-    const result = coll.orderBy((car) => car.year)
+    const result = coll
+      .orderBy((car) => car.year)
       .where((car) => car.brand === 'kia')
       .select((car) => car.model);
 
     expect(result.length).toBe(3);
     expect(result.toArray()).toEqual(['rio', 'sportage', 'sorento']);
 
-    const result2 = coll.orderBy((car) => car.year, 'desc')
+    const result2 = coll
+      .orderBy((car) => car.year, 'desc')
       .where((car) => car.brand === 'kia')
       .select((car) => car.model);
 
