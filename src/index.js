@@ -1,6 +1,6 @@
 // @ts-check
 
-import Enumerable from './Enumerable';
+import Enumerable from "./Enumerable";
 
 /**
  * Convert array to enumerable collection

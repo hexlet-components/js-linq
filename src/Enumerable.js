@@ -61,12 +61,12 @@ class Enumerable {
    *
    * // ['rio', 'sportage', 'm4', 'm5', 'sorento']
    */
-  orderBy(fn, direction = 'asc') {
+  orderBy(fn, direction = "asc") {
     const comparator = (a, b) => {
       const a1 = fn(a);
       const b1 = fn(b);
 
-      const compareResult = direction === 'asc' ? 1 : -1;
+      const compareResult = direction === "asc" ? 1 : -1;
 
       if (a1 > b1) {
         return compareResult;
@@ -120,10 +120,7 @@ class Enumerable {
    */
   toArray() {
     if (!this.memo) {
-      this.memo = this.operations.reduce(
-        (acc, func) => func(acc),
-        this.collection,
-      );
+      this.memo = this.operations.reduce((acc, func) => func(acc), this.collection);
     }
 
     return this.memo;
