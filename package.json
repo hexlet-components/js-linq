@@ -9,9 +9,12 @@
   "scripts": {
     "documentation": "documentation",
     "test": "vitest run",
-    "lint": "biome check .",
+    "lint": "oxlint --config=.oxlintrc.json .",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "pnpm run build",
+    "lint:fix": "oxfmt --ignore-path=.oxfmtignore . && oxlint --config=.oxlintrc.json --fix .",
+    "format": "oxfmt --ignore-path=.oxfmtignore .",
+    "format:check": "oxfmt --ignore-path=.oxfmtignore --check ."
   },
   "files": [
     "dist"
@@ -30,8 +33,10 @@
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
-    "@biomejs/biome": "^2.2.4",
     "documentation": "^14.0.1",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
     "vitest": "^4.0.15"
-  }
+  },
+  "packageManager": "pnpm@11.20.0"
 }
