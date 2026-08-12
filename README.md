@@ -3,6 +3,14 @@
 [![github action status](https://github.com/hexlet-components/js-linq/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-components/js-linq/actions)
 [![Code Climate](https://codeclimate.com/github/hexlet-components/js-linq/badges/gpa.svg)](https://codeclimate.com/github/hexlet-components/js-linq)
 
+## Зачем это нужно
+
+Запросы к массиву объектов в стиле LINQ: выборка, группировка, сортировка
+цепочкой вызовов.
+
+Нужна курсам, где показывают декларативную работу с данными: что именно
+получить, а не как это обойти циклом.
+
 ## Install
 
 ```sh
