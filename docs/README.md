@@ -6,28 +6,28 @@
 
 ### Table of Contents
 
--   [from][1]
-    -   [Parameters][2]
-    -   [Examples][3]
--   [Enumerable][4]
-    -   [Parameters][5]
-    -   [Examples][6]
-    -   [where][7]
-        -   [Parameters][8]
-        -   [Examples][9]
-    -   [select][10]
-        -   [Parameters][11]
-        -   [Examples][12]
-    -   [orderBy][13]
-        -   [Parameters][14]
-        -   [Examples][15]
-    -   [length][16]
-        -   [Examples][17]
-    -   [build][18]
-        -   [Parameters][19]
-        -   [Examples][20]
-    -   [toArray][21]
-        -   [Examples][22]
+- [from][1]
+    - [Parameters][2]
+    - [Examples][3]
+- [Enumerable][4]
+    - [Parameters][5]
+    - [Examples][6]
+    - [where][7]
+        - [Parameters][8]
+        - [Examples][9]
+    - [select][10]
+        - [Parameters][11]
+        - [Examples][12]
+    - [orderBy][13]
+        - [Parameters][14]
+        - [Examples][15]
+    - [length][16]
+        - [Examples][17]
+    - [build][18]
+        - [Parameters][19]
+        - [Examples][20]
+    - [toArray][21]
+        - [Examples][22]
 
 ## from
 
@@ -35,7 +35,7 @@ Convert array to enumerable collection
 
 ### Parameters
 
--   `collection`  
+- `collection`  
 
 ### Examples
 
@@ -54,8 +54,8 @@ Enumerable
 
 ### Parameters
 
--   `collection`  
--   `operations`  
+- `collection`  
+- `operations`  
 
 ### Examples
 
@@ -76,7 +76,7 @@ Where
 
 #### Parameters
 
--   `fn`  
+- `fn`  
 
 #### Examples
 
@@ -98,7 +98,7 @@ Select
 
 #### Parameters
 
--   `fn`  
+- `fn`  
 
 #### Examples
 
@@ -116,8 +116,8 @@ OrderBy
 
 #### Parameters
 
--   `fn`  
--   `direction`   (optional, default `'asc'`)
+- `fn`  
+- `direction` (optional, default `'asc'`)
 
 #### Examples
 
@@ -146,7 +146,7 @@ Build
 
 #### Parameters
 
--   `fn`  
+- `fn`  
 
 #### Examples
 
