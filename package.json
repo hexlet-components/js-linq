@@ -12,9 +12,9 @@
     "lint": "oxlint .",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "pnpm run build",
-    "lint:fix": "oxfmt --ignore-path=.oxfmtignore . && oxlint --fix .",
-    "format": "oxfmt --ignore-path=.oxfmtignore .",
-    "format:check": "oxfmt --ignore-path=.oxfmtignore --check ."
+    "lint:fix": "oxfmt . && oxlint --fix .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check ."
   },
   "files": [
     "dist"
